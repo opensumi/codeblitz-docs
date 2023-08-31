@@ -1,0 +1,79 @@
+.site_footer {
+  padding-bottom: 20px;
+  color: rgb(147, 147, 147);
+  text-align: center;
+  line-height: 24px;
+  font-size: 14px;
+  background-color: rgb(249, 249, 249);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+  .withMenu {
+    width: 1440px;
+    max-width: calc(100% - 80px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  :global(a) {
+    color: rgb(147, 147, 147);
+  }
+}
+
+@media only screen and (min-width: 767.99px) {
+  .site_footer.withMenu {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    &.collapsed {
+      margin-left: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 991.99px) {
+  .site_footer.withMenu {
+    margin-left: 301px;
+    width: calc(100% - 301px);
+    &.collapsed {
+      margin-left: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.split_line {
+  margin: 0 8px;
+  color: rgb(147, 147, 147);
+}
+
+.varify_icon {
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  display: inline-block;
+  background-image: url('https://img.alicdn.com/imgextra/i3/O1CN01nP2fKc1K3VcOFoZos_!!6000000001108-2-tps-65-70.png');
+}
+
+.record {
+  display: inline-block;
+  text-decoration: none;
+  height: 24px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    background-image: url('https://img.alicdn.com/imgextra/i1/O1CN01u1Sy8o1dnHuHoy2ba_!!6000000003780-2-tps-20-20.png');
+  }
+}

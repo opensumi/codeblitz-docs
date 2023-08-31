@@ -1,0 +1,7 @@
+@codeblitz/gatsby-theme/site/**/*.js
+@codeblitz/gatsby-theme/lib
+example/examples
+node_modules
+.cache
+public
+dist

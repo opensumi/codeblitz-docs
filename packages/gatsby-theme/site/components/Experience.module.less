@@ -1,0 +1,141 @@
+@import './mixins';
+
+.experience {
+  background-image: url(https://mdn.alipayobjects.com/huamei_htww6h/afts/img/A*FHUCS5xIIagAAAAAAAAAAAAADhl8AQ/original);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .content {
+    .container1440;
+
+    padding-top: 100px;
+    padding-bottom: 140px;
+  }
+
+  .title {
+    font-family: AlibabaPuHuiTi_2_95_ExtraBold;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 102px;
+    text-transform: uppercase;
+  }
+
+  :global([lang='zh']) {
+    .title {
+      letter-spacing: 10px;
+    }
+  }
+
+  .container {
+    text-align: center;
+
+    .input_suffix {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .input_suffix_wrapper {
+        margin-left: 24px;
+        display: flex;
+        align-items: center;
+
+        .send_icon {
+          width: 24px;
+          height: 24px;
+          margin-right: 4px;
+        }
+
+        .open_text {
+          font-family: PingFangSC;
+          font-weight: 500;
+          font-size: 16px;
+          color: #1677ff;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .label {
+      font-family: AlibabaPuHuiTi_2_65_Medium;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.88);
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 38px;
+
+      .input {
+        margin-right: 8px;
+
+        .input_affix_wrapper {
+          background-color: #ffffff;
+          box-shadow: 0 1px 6px 0 rgba(153, 168, 189, 0.06),
+            0 8px 12px 0 rgba(153, 168, 189, 0.04),
+            0 9px 28px 8px rgba(153, 168, 189, 0.06);
+          height: 52px;
+          width: 720px;
+          border: none;
+          text-align: left;
+          border-radius: 8px;
+
+          :global(.ant-input-affix-wrapper) {
+            height: inherit;
+            border-radius: inherit;
+            padding: 15px 20px;
+          }
+        }
+        input {
+          &::placeholder {
+            font-family: PingFangSC;
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(0, 10, 26, 0.65);
+            letter-spacing: 0;
+            text-align: justify;
+          }
+        }
+      }
+
+      .button {
+        button {
+          background-color: #ffffff;
+          border-radius: 8px;
+          padding: 12px 24px;
+          height: 52px;
+          border: none;
+
+          span {
+            font-family: PingFangSC;
+            font-weight: 500;
+            font-size: 16px;
+            color: #1677ff;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+  }
+
+  // 输入框
+}
+
+@media (max-width: 900px) {
+  .experience {
+    .title {
+      margin-top: 30px;
+    }
+  }
+}

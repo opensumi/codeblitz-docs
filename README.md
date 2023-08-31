@@ -1,2 +1,0 @@
-# codeblitz-docs
-codeblitz document

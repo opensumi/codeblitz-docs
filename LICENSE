@@ -1,6 +1,11 @@
-MIT License
+The MIT License (MIT)
 
-Copyright (c) 2023 OpenSumi
+Copyright (c) 2019-present OpenSumi Team, https://opensumi.com
+Copyright (c) 2015 gatsbyjs
+
+Copyright for portions of opensumi-gastby-theme are held by gatsbyjs, 2015 as 
+part of project gatsby-starter-default. 
+All other copyright for project opensumi-gastby-theme are held by the OpenSumi Team, 2019.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

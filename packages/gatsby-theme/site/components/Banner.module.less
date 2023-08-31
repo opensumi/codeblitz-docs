@@ -1,0 +1,385 @@
+@import './mixins';
+
+.wrapper {
+  min-height: 650px;
+  max-height: 803px;
+  height: calc(660px);
+  position: relative;
+  overflow: hidden;
+  background-image: url(https://mdn.alipayobjects.com/huamei_htww6h/afts/img/A*ppY0Rq0_t9YAAAAAAAAAAAAADhl8AQ/original);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .content {
+    .container1440;
+    height: 100%;
+    position: relative;
+  }
+  .text {
+    position: relative;
+    top: 26%;
+    z-index: 1;
+    // margin-left: 4.5%;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      .logo {
+        width: 70px;
+        height: 70px;
+        margin: 0 20px;
+      }
+      .label {
+        font-size: 56px;
+        font-family: AlibabaPuHuiTi_2_95_ExtraBold;
+        color: #000a1a;
+        letter-spacing: 0;
+        line-height: 72px;
+        font-weight: bold;
+      }
+    }
+    .description {
+      font-family: PingFangSC, @font-family;
+      display: block;
+      position: relative;
+      margin-top: 16px;
+      width: 529px;
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(0, 10, 26, 0.68);
+      letter-spacing: 0;
+      text-align: justify;
+      line-height: 32px;
+      margin-bottom: 32px;
+    }
+    .buttons {
+      display: flex;
+
+      .buttonLink + .buttonLink {
+        margin-left: 16px;
+      }
+
+      .buttonLink {
+        cursor: pointer;
+        z-index: 10;
+        position: relative;
+        transition: all 0.3s;
+        color: #000a1ae0;
+        background-color: #ffffff;
+        border: 1px solid rgba(0, 10, 26, 0.15);
+        text-align: center;
+        font-size: 16px;
+        padding: 12px 26px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        opacity: 0.8;
+
+        span {
+          font-family: PingFangSC;
+          line-height: 28px;
+          font-weight: 500;
+        }
+
+        &.primary {
+          border: none;
+          outline: none;
+          color: #fff;
+          background-color: #1677ff;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .githubWrapper {
+        margin-left: 16px;
+        display: flex;
+        :global {
+          .gh-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            padding: 9px;
+            border: 1px solid #ced4d9;
+            background: transparent;
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            cursor: pointer;
+            float: left;
+            transition: all 0.15s;
+            &:hover {
+              background: #f2f4f5;
+            }
+            .gh-ico {
+              width: 20px;
+              height: 20px;
+              background-image: url(https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*Nk9mQ48ZoZMAAAAAAAAAAABkARQnAQ);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              box-sizing: border-box;
+              cursor: pointer;
+              color: #333;
+            }
+            .gh-text {
+              display: none;
+            }
+          }
+          .gh-count {
+            position: relative;
+            display: none;
+            /* hidden to start */
+            margin-left: 52px;
+            margin-top: 7px;
+            border: 1px solid #d4d4d4;
+            padding: 2px 10px;
+            font-weight: 700;
+            height: 65%;
+            border-radius: 5px;
+            color: rgb(49, 70, 89);
+            &:hover {
+              background: #f2f4f5;
+              transition: all 0.15s;
+            }
+          }
+          .gh-count:hover,
+          .gh-count:focus {
+            color: #4183c4;
+          }
+          .gh-count:before,
+          .gh-count:after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+          }
+          .gh-count:before {
+            top: 50%;
+            left: -3px;
+            margin-top: -5px;
+            border-width: 4px 4px 4px 0;
+            border-right-color: #fafafa;
+          }
+          .gh-count:after {
+            top: 50%;
+            border-width: 5px 5px 5px 0;
+            border-right-color: #d4d4d4;
+            left: -5px;
+            z-index: -1;
+            margin-top: -6px;
+          }
+        }
+      }
+    }
+  }
+  .notifications {
+    width: 80%;
+    display: flex;
+    bottom: 40px;
+    position: absolute;
+    z-index: 3;
+    margin-left: 4.5%;
+  }
+  .teaser {
+    display: flex;
+    position: absolute;
+    right: 60px;
+    // width: 50%;
+    // max-width: 560px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    padding-bottom: 140px;
+    padding-top: 160px;
+    .teaserimg {
+      width: 100%;
+      height: auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .backLeftBottom {
+    position: absolute;
+    left: -8%;
+    bottom: -20px;
+  }
+}
+.videoModal {
+  :global {
+    .video-react-big-play-button {
+      display: none !important;
+    }
+    .video-react-control-bar {
+      border-radius: 0 0 4px 4px;
+    }
+    .video-react {
+      border-radius: 4px;
+      .video-react-video {
+        border-radius: 4px;
+      }
+    }
+    .ant-modal-close {
+      right: -50px;
+      top: -12px;
+      color: #fff;
+    }
+    .anticon-info-circle {
+      display: none !important;
+    }
+    .ant-modal-confirm-btns {
+      display: none !important;
+    }
+    .ant-modal-confirm-title {
+      display: none !important;
+    }
+    .ant-modal-close {
+      display: block !important;
+    }
+    .ant-modal-body {
+      padding: 0 !important;
+      .ant-modal-confirm-content {
+        margin: 0 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 1144px) {
+  .wrapper {
+    .teaser {
+      transition: 0.3s all;
+      margin: auto;
+      margin-top: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    .content {
+      width: 91.46%;
+      margin-left: 4.27%;
+      margin-bottom: 5%;
+      position: relative;
+    }
+    .text {
+      top: 100px;
+      text-align: center;
+      margin-left: 0;
+      .logo {
+        width: 50px !important;
+        height: 50px !important;
+      }
+      .title {
+        font-size: 1em;
+        margin-left: 0;
+      }
+      .description {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        font-size: 1em;
+        margin-top: 10px;
+        opacity: 0.6;
+        &::before {
+          display: none;
+        }
+      }
+      .buttons {
+        display: inline-flex;
+        .more {
+          font-size: 1em;
+        }
+        .githubIframe {
+          height: 40px;
+        }
+        .videoButtonWrapper {
+          width: fit-content;
+          height: fit-content;
+        }
+      }
+    }
+    .notifications {
+      width: 100%;
+      display: block;
+      bottom: 20px;
+      height: 56px;
+      overflow: hidden;
+    }
+    .teaser {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 105px;
+      .teaserimg {
+        width: 40%;
+        margin-left: unset;
+        margin-right: unset;
+      }
+    }
+  }
+}
+
+@media (max-width: 786px) {
+  .wrapper {
+    .text {
+      .buttons {
+        .videoButtonWrapper {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 510px) {
+  .wrapper {
+    .text {
+      .buttons {
+        margin-top: 70%;
+        .githubWrapper {
+          display: none;
+        }
+      }
+    }
+    .teaser {
+      width: 100%;
+      .teaserimg {
+        width: 100%;
+      }
+    }
+    .backLeftBottom {
+      display: none;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .wrapper {
+    .text {
+      height: 69%;
+      .buttons {
+        bottom: 10px;
+        margin-top: unset;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

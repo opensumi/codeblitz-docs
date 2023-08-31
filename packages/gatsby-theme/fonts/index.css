@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'AlibabaPuHuiTi_2_105_Heavy';
+  src: url('./ttf/AlibabaPuHuiTi-2-105-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi_2_95_ExtraBold';
+  src: url('./ttf/AlibabaPuHuiTi-2-95-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi_2_65_Medium';
+  src: url('./ttf/AlibabaPuHuiTi-2-65-Medium.ttf') format('truetype');
+}

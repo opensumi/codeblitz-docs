@@ -1,0 +1,112 @@
+@import './mixins';
+
+.features {
+  margin-top: 96px;
+  margin-bottom: 96px;
+
+  .container1440;
+  .container {
+    margin: auto;
+  }
+}
+
+.title {
+  font-family: AlibabaPuHuiTi_2_95_ExtraBold;
+  font-size: 36px;
+  color: #000000;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+}
+:global([lang='zh']) {
+  .title {
+    letter-spacing: 10px;
+  }
+}
+
+.feature {
+  width: 588px;
+  height: 166px;
+  // margin-right: 38px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 6px 0 rgba(153, 168, 189, 0.06),
+    0 8px 12px 0 rgba(153, 168, 189, 0.04),
+    0 9px 28px 8px rgba(153, 168, 189, 0.06);
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  padding: 32px;
+
+  &:first-child,
+  &:nth-child(3) {
+    margin-right: 24px;
+  }
+}
+
+.feature_row {
+  width: 100%;
+  margin: 0;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.featureImage {
+  width: 64px;
+  height: 64px;
+}
+
+.featureWrap {
+  margin-left: 20px;
+  text-align: left;
+  h3 {
+    margin: 0;
+    font-family: PingFangSC;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgba(0, 10, 26, 0.89);
+    line-height: 31px;
+    margin-top: 28px;
+  }
+  p {
+    font-family: PingFangSC;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 10, 26, 0.68);
+    text-align: justify;
+    line-height: 22px;
+    margin-top: 8px;
+  }
+  :global([lang='zh']) {
+    p {
+      margin: 0 71px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .features {
+    .title {
+      margin-top: 30px;
+    }
+  }
+  .feature_row {
+    flex-direction: column;
+    margin-top: 20px;
+    .feature {
+      height: 363px;
+    }
+    .featureImage {
+      margin-top: 20px;
+    }
+    .feature {
+      margin: 10px auto;
+    }
+  }
+}
