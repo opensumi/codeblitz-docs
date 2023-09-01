@@ -1,11 +1,7 @@
 import React from 'react';
-import { Row, Col, Button, Input } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
-import classNames from 'classnames';
+import { Button, Input } from 'antd';
 import * as styles from './Experience.module.less';
 import { useTranslation } from 'react-i18next';
-
-const { Search } = Input;
 
 interface ExperienceProps {
   title?: string;
@@ -32,7 +28,7 @@ const Experience: React.FC<ExperienceProps> = ({ title }) => {
 
   return (
     <>
-      <section className={styles.experience}>
+      <section className={styles.experience} id="experience">
         <div className={styles.content}>
           <div className={styles.title}>
             <span>{title || t('功能体验')}</span>

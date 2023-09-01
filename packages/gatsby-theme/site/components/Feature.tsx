@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import * as styles from './Features.module.less';
+import * as styles from './Feature.module.less';
 
 interface IFeature {
   icon: string;
@@ -32,7 +32,7 @@ const Features: React.FC<FeaturesProps> = React.memo(({ title, features }) => {
 
   return (
     <>
-      <section className={styles.features}>
+      <section className={styles.features} id={'feature'}>
         <div className={styles.title}>
           <span>{title || t('核心能力')}</span>
         </div>

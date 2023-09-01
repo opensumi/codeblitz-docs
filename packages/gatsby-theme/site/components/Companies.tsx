@@ -7,6 +7,7 @@ import * as styles from './Companies.module.less';
 interface Company {
   name: string;
   img: string;
+  description: string;
 }
 
 interface CompaniesProps {
@@ -28,12 +29,20 @@ const Companies: React.FC<CompaniesProps> = ({
 }) => {
   const getCompanies = companies.map((company) => (
     <Col key={company.name} className={styles.company} md={4} sm={2}>
-      <img className={styles.companyimg} src={company.img} alt={company.name} />
+      <div className={styles.companyimg}>
+        <img
+          className={styles.companyimg}
+          src={company.img}
+          alt={company.name}
+        />
+      </div>
+      <span className={styles.company_name}>{company.name}</span>
+      <span className={styles.company_description}>{company.description}</span>
     </Col>
   ));
 
   return (
-    <div className={classNames(styles.wrapper, className)} style={style}>
+    <div className={classNames(styles.wrapper, className)}>
       <div key="content" className={styles.content}>
         <p key="title" className={styles.title}>
           {title}

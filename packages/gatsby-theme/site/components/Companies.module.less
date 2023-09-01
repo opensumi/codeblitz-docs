@@ -10,21 +10,22 @@
   overflow-x: hidden;
   background: rgba(244, 232, 255, 0.15);
   .content {
-    height: 100%;
-    margin-bottom: 50px;
-    position: relative;
     .container1440;
+    height: 100%;
+    position: relative;
+
+    margin-top: 96px;
+    margin-bottom: 96px;
   }
   .title {
-    height: 40px;
-    font-family: PingFangSC, @font-family;
-    font-size: 28px;
-    color: #000000;
-    font-weight: 600;
+    font-family: AlibabaPuHuiTi_2_95_ExtraBold;
+    font-size: 36px;
+    color: #000a1a;
     text-align: center;
     width: 100%;
-    margin-top: 50px;
+    text-align: center;
     text-transform: uppercase;
+    margin: 0;
   }
   .add_more_button {
     margin-top: 40px;
@@ -42,26 +43,71 @@
   .companiesContainer {
     position: relative;
     margin: auto;
-    margin-top: 52px;
+    margin-top: 40px;
+
     :global {
       .ant-row {
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
       }
     }
     .company {
-      height: 80px;
-      background: #ffffff;
-      box-shadow: -1px 4px 20px 0px rgba(213, 168, 255, 0.19);
-      border-radius: 2px;
+      background-color: #ffffff;
+      box-shadow: 0 3px 6px -4px rgba(153, 168, 189, 0.12),
+        0 6px 16px 0 rgba(153, 168, 189, 0.08),
+        0 9px 28px 8px rgba(153, 168, 189, 0.05);
+      border-radius: 12px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       box-sizing: border-box;
-      margin: 0 10px;
-      margin-bottom: 20px;
+      margin-right: 24px;
+      min-width: 282px;
+      padding: 32px !important;
+      transition: 0.1s all;
+      min-height: 310px;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      .company_name {
+        font-family: AlibabaPuHuiTi_2_85_Bold;
+        font-size: 24px;
+        color: #19181c;
+        line-height: 32px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+      }
+
+      .company_description {
+        font-family: PingFangSC;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(0, 10, 26, 0.68);
+        text-align: center;
+        line-height: 28px;
+        min-height: 112px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      display: flex;
+      flex-direction: column;
+
       .companyimg {
-        height: 2rem;
+        height: 84px;
+        width: 200px;
+        text-align: center;
+        overflow: hidden;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
       }
     }
   }

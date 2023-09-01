@@ -11,10 +11,10 @@ module.exports = {
     title: 'Codeblitz',
     description:
       '一款帮助你快速搭建本地和云端 IDE 的框架 - A framework helps you quickly build Cloud or Desktop IDE products.',
-    siteUrl: 'https://opensumi.com',
+    siteUrl: 'https://codeblitz.cloud.alipay.com',
     logo: {
       img: 'https://mdn.alipayobjects.com/huamei_htww6h/afts/img/A*D9r6R7ncCd8AAAAAAAAAAAAADhl8AQ/original',
-      link: 'https://opensumi.com',
+      link: 'https://codeblitz.cloud.alipay.com',
     },
     logoUrl:
       'https://mdn.alipayobjects.com/huamei_htww6h/afts/img/A*D9r6R7ncCd8AAAAAAAAAAAAADhl8AQ/original',

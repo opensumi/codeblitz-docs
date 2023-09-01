@@ -44,8 +44,8 @@ exports.wrapPageElement = ({ element, props }) => {
     ...props,
     ...element.props,
     footerProps: {
-      bottom: `Copyright © 2019-present Alibaba Group Holding Limited, Ant Group Co. Ltd.`,
+      bottom: `© 2022 by Alipay-Platform Design Department · Terms of Use · Privacy Policy`,
     },
-    showCopyRight: true,
+    // showCopyRight: true,
   });
 };

@@ -357,12 +357,12 @@ const Header: React.FC<HeaderProps> = ({
     >
       <div className={styles.container}>
         <div className={styles.left}>
-          {/* <h1>
+          <h1>
             <a href={logoLink}>{img}</a>
-          </h1> */}
-          {subTitle && (
+          </h1>
+          {/* {subTitle && (
             <>
-              {/* <span className={styles.divider} /> */}
+              <span className={styles.divider} />
               <h2 className={styles.subProduceName}>
                 {React.createElement(
                   SubTitleLink,
@@ -376,7 +376,7 @@ const Header: React.FC<HeaderProps> = ({
                 )}
               </h2>
             </>
-          )}
+          )} */}
         </div>
         <nav className={styles.nav}>
           {showSearch && (

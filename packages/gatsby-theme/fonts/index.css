@@ -12,3 +12,8 @@
   font-family: 'AlibabaPuHuiTi_2_65_Medium';
   src: url('./ttf/AlibabaPuHuiTi-2-65-Medium.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi_2_85_Bold';
+  src: url('./ttf/AlibabaPuHuiTi-2-85-Bold.ttf') format('truetype');
+}

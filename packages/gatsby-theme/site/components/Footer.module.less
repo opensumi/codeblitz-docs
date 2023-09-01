@@ -3,14 +3,41 @@
 
 .footer {
   font-family: PingFangSC, @font-family;
-  background: #f9f9f9 !important;
+  background: #f7faff !important;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.4) !important;
   z-index: 10;
+
+  :global(.rc-footer-column) {
+    margin-bottom: 0;
+  }
+
+  :global(.rc-footer-container) {
+    .container1440;
+    border-top: none !important;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
   :global(.rc-footer-container),
   :global(.rc-footer-bottom-container) {
-    .container1440;
+    border-top: 1px solid #e8ebf0;
+    font-family: PingFangSC;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 10, 26, 0.68);
+    text-align: center;
+    line-height: 22px;
   }
+
+  .footer_logo_container {
+    text-align: left;
+
+    .logo_icon {
+      width: 126px;
+    }
+  }
+
   h2 {
     color: rgba(0, 0, 0, 0.85) !important;
   }

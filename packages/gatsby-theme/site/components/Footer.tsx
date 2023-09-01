@@ -7,6 +7,7 @@ import omit from 'omit.js';
 import { LayoutContext } from '../layouts/layout-context';
 import * as styles from './Footer.module.less';
 import 'rc-footer/assets/index.less';
+import { DingtalkOutlined } from '@ant-design/icons';
 
 interface FooterProps extends RcFooterProps {
   rootDomain?: string;
@@ -49,137 +50,79 @@ const Footer: React.FC<FooterProps> = ({
   }, [location]);
 
   const getColums = () => {
-    // 如果外部没有传入 columns，则默认展示默认 footer
-    const col1 = {
-      title: t('资源'),
+    const col0 = {
+      title: '',
+      className: styles.footer_logo_container,
       items: [
         {
           icon: (
             <img
-              src="https://img.alicdn.com/imgextra/i1/O1CN01JhV5ts1dKtJraHkGo_!!6000000003718-2-tps-36-36.png"
-              alt={t('WebIDE 案例')}
+              className={styles.logo_icon}
+              src="https://mdn.alipayobjects.com/huamei_htww6h/afts/img/A*D9r6R7ncCd8AAAAAAAAAAAAADhl8AQ/original"
             />
           ),
-          title: t('WebIDE 案例'),
-          url: 'https://github.com/opensumi/ide-startup',
+          title: ``,
+          url: 'https://codeblitz.cloud.alipay.com',
+          openExternal: true,
+        },
+      ],
+    };
+    // 如果外部没有传入 columns，则默认展示默认 footer
+    const col1 = {
+      title: t('核心能力'),
+      items: [
+        {
+          title: t('平台介绍'),
+          url: 'https://codeblitz.cloud.alipay.com',
           openExternal: true,
         },
         {
-          icon: (
-            <img
-              src="https://img.alicdn.com/imgextra/i1/O1CN01mY1gO81erhIwTdhFK_!!6000000003925-2-tps-36-30.png"
-              alt={t('Electron 案例')}
-            />
-          ),
-          title: t('Electron 案例'),
-          url: 'https://github.com/opensumi/ide-electron',
-          openExternal: true,
-        },
-        {
-          icon: (
-            <img
-              src="https://img.alicdn.com/imgextra/i1/O1CN0186yMXa1ng5oNbsydA_!!6000000005118-2-tps-30-36.png"
-              alt={t('纯前端案例')}
-            />
-          ),
-          title: t('纯前端案例'),
-          url: 'https://github.com/opensumi/ide-startup-lite',
-          openExternal: true,
-        },
-        {
-          icon: (
-            <img
-              src="https://img.alicdn.com/imgextra/i4/O1CN01JDS6U626MprDmVM8D_!!6000000007648-2-tps-36-36.png"
-              alt={t('官方主题')}
-            />
-          ),
-          title: t('官方主题'),
-          url: 'https://github.com/opensumi/Default-Themes',
+          title: t('名次解释'),
+          url: 'https://codeblitz.cloud.alipay.com',
           openExternal: true,
         },
       ],
     };
 
     const col2 = {
-      title: t('社区'),
+      title: t('功能体验'),
       items: [
         {
-          icon: (
-            <img
-              src="https://img.alicdn.com/imgextra/i1/O1CN01ISm2G81GUIHuhCJJK_!!6000000000625-2-tps-124-90.png"
-              alt="d2conf"
-            />
-          ),
-          title: `D2 - ${t('D2 前端技术论坛')}`,
-          url: 'https://d2.alibabatech.com/',
-          openExternal: true,
-        },
-        {
-          icon: (
-            <img
-              src="https://gw.alipayobjects.com/zos/rmsportal/mZBWtboYbnMkTBaRIuWQ.png"
-              alt="seeconf"
-            />
-          ),
-          title: `SEE Conf - ${t('蚂蚁体验科技大会')}`,
-          url: 'https://seeconf.antfin.com/',
+          title: t('立即使用'),
+          url: 'https://codeblitz.cloud.alipay.com',
           openExternal: true,
         },
       ],
     };
 
     const col3 = {
-      title: t('帮助'),
+      title: t('合作案例'),
       items: [
         {
-          icon: (
-            <img
-              src="https://img.alicdn.com/imgextra/i3/O1CN01hOukdb26V4zGBJGyN_!!6000000007666-2-tps-48-48.png"
-              alt="github"
-            />
-          ),
-          title: 'GitHub Issues',
-          url: 'https://github.com/opensumi/core/issues',
+          title: '商家平台',
+          url: 'https://codeblitz.cloud.alipay.com',
+          openExternal: true,
+        },
+        {
+          title: '服务商平台',
+          url: 'https://codeblitz.cloud.alipay.com',
           openExternal: true,
         },
       ],
     };
 
     const more = {
-      icon: (
-        <img
-          src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg"
-          alt="more products"
-        />
-      ),
-      title: t('更多产品'),
+      title: t('联系我们'),
       items: [
         {
-          icon: (
-            <img
-              src="https://img.alicdn.com/imgextra/i1/O1CN01P04WYq1HV2XD2XhTP_!!6000000000762-2-tps-180-172.png"
-              alt={t('淘宝开发者工具')}
-            />
-          ),
-          title: t('淘宝开发者工具'),
-          url: 'https://miniapp-dev.taobao.com/',
-          openExternal: true,
-        },
-        {
-          icon: (
-            <img
-              src="https://img.alicdn.com/imgextra/i2/O1CN01DVM7ow1njIZNWiUnK_!!6000000005125-2-tps-180-172.png"
-              alt={t('支付宝小程序开发工具')}
-            />
-          ),
-          title: t('支付宝小程序开发工具'),
-          url: 'https://opendocs.alipay.com/mini/ide/overview',
+          icon: <DingtalkOutlined />,
+          title: t('钉钉'),
           openExternal: true,
         },
       ],
     };
 
-    return [col1, col2, col3, more];
+    return [col0, col1, col2, col3, more];
   };
 
   return (
