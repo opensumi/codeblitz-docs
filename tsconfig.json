@@ -1,5 +1,5 @@
 {
-  "include": ["@codeblitz/gatsby-theme", "example"],
+  "include": ["@codeblitz/gatsby-theme", "site"],
   "compilerOptions": {
     "target": "es2019",
     "module": "commonjs",

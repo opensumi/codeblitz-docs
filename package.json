@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "yarn workspace site develop",
-    "build": "yarn workspace site build",
+    "build": "cd packages/site && yarn run build",
     "deploy": "yarn build && gh-pages -d site/public",
     "release": "yarn workspace @codeblitz/gatsby-theme run release",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,less}\"",
@@ -46,5 +46,15 @@
   "resolutions": {
     "@babel/plugin-transform-spread": "7.12.1",
     "@babel/standalone": "7.12.6"
+  },
+  "engines": {
+    "install-node": "18.17.1"
+  },
+  "ci": {
+    "type": "aci",
+    "version": "alinode=5"
+  },
+  "dependencies": {
+    "gatsby-cli": "^5.12.0"
   }
 }
