@@ -4,7 +4,7 @@ const fse = require('fs-extra');
 
 try {
   const workspaceDir = path.join(__dirname, '..');
-  // const runBuild = cp.execSync('cd packages/site && yarn run build', { cwd: __dirname });
+  cp.execSync('cd packages/site && yarn run build', { cwd: workspaceDir });
 
   const sourcePath = path.join(workspaceDir, 'packages/site/public');
   const targetPath = path.join(workspaceDir, 'dist');
