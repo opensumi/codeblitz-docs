@@ -19,9 +19,9 @@ module.exports = ({
   const config = {
     siteMetadata: {
       title: `Codeblitz`,
-      description: `OpenSumi Doc Theme`,
-      siteUrl: 'https://opensumi.com',
-      githubUrl: 'https://github.com/opensumi/gatsby-theme',
+      // description: `OpenSumi Doc Theme`,
+      siteUrl: 'https://codeblitz.cloud.alipay.com',
+      githubUrl: 'https://github.com/opensumi/codeblitz',
       navs: [],
       docs: [],
       examples: [],

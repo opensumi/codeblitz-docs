@@ -486,7 +486,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query ($path: String!) {
+  query {
     site {
       siteMetadata {
         title
@@ -503,7 +503,7 @@ export const pageQuery = graphql`
       }
       pathPrefix
     }
-    markdownRemark(fields: { slug: { eq: $path } }) {
+    markdownRemark {
       htmlAst
       tableOfContents
       fields {

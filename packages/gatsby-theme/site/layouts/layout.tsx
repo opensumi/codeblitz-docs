@@ -257,7 +257,7 @@ const Layout: React.FC<LayoutProps> = ({
       {!isExamplePage && (
         <Footer
           githubUrl={githubUrl}
-          rootDomain="https://opensumi.com"
+          // rootDomain="https://opensumi.com"
           location={location}
           {...footerProps}
         />

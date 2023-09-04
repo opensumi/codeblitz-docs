@@ -88,9 +88,14 @@ const IndexPage: React.FC = () => {
     },
     {
       text: t('产品文档'),
-      link: `/${i18n.language}/docs/integrate/overview`,
+      link: `/${i18n.language}/docs/develop/api-docs`,
     },
   ];
+
+  const openExperience = (value: string) => {
+    console.log('openExperience:>> ', value);
+    window.open(`${window.location.origin}/console#${value}`);
+  };
 
   return (
     <>
@@ -107,7 +112,7 @@ const IndexPage: React.FC = () => {
       />
       <Feature title={t('核心能力')} features={features} />
       {/* 功能体验 */}
-      <Experience title={'功能体验'} />
+      <Experience title={'功能体验'} onOpen={openExperience} />
       <Companies title={t('合作案例')} companies={companies} />
     </>
   );

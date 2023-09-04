@@ -18,11 +18,11 @@ module.exports = {
     },
     logoUrl:
       'https://mdn.alipayobjects.com/huamei_htww6h/afts/img/A*D9r6R7ncCd8AAAAAAAAAAAAADhl8AQ/original',
-    githubUrl: 'https://github.com/opensumi/core',
-    docsUrl: 'https://github.com/opensumi/doc',
+    githubUrl: 'https://github.com/opensumi/codeblitz',
+    docsUrl: 'https://github.com/opensumi/codeblitz-docs',
     navs: [
       {
-        slug: 'docs/develop/how-to-contribute',
+        slug: 'docs/develop/api-docs',
         title: {
           zh: '开发文档',
           en: 'Development',
@@ -30,14 +30,14 @@ module.exports = {
       },
     ],
     docs: [
-      {
-        slug: 'develop/sample',
-        title: {
-          zh: '开发案例',
-          en: 'Develop Sample',
-        },
-        order: 4,
-      },
+      // {
+      //   slug: 'develop/sample',
+      //   title: {
+      //     zh: '开发案例',
+      //     en: 'Develop Sample',
+      //   },
+      //   order: 4,
+      // },
     ],
     showDingTalkQRCode: true,
     showWeChatQRCode: false,
@@ -47,7 +47,7 @@ module.exports = {
     redirects: [],
     showGithubCorner: true, // 是否展示角落的 GitHub 图标
     showGithubStars: true,
-    showLanguageSwitcher: true, // 用于定义是否展示语言切换
+    showLanguageSwitcher: false, // 用于定义是否展示语言切换
     showSearch: true,
   },
 };
