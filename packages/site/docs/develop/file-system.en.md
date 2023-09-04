@@ -13,7 +13,7 @@ order: 1
 
 ### 二、通过 BrowserFS 实现
 
-alex 内置了一套 BrowserFS，在开源库的基础上优化了些性能，并增加了一些更简单使用的文件系统，通过 BrowserFS，可配置工作空间的文件读取行为，这样只需要实现几个接口就能直接使用基于 file scheme 的文件系统了，因为一般场景推荐使用这个，详细示例代码参考[链接](https://code.alipay.com/alexgroup/alex-demo/blob/master/filesystem.tsx)
+codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能，并增加了一些更简单使用的文件系统，通过 BrowserFS，可配置工作空间的文件读取行为，这样只需要实现几个接口就能直接使用基于 file scheme 的文件系统了，因为一般场景推荐使用这个
 
 目前支持的文件系统类型如下：
 

@@ -7,21 +7,21 @@ order: 0
 
 ## 一、快速开始
 
-示例工程见[**仓库**](https://code.alipay.com/alexgroup/alex-demo)，安装完依赖后运行`npm run startup`
+示例工程见[**仓库**](https://github.com/opensumi/codeblitz-sample)
 
 ## 二、详细说明
 
 #### 1、安装 IDE 组件
 
-tnpm i @alipay/alex -S
+yarn i @codeblitzjs/ide-core -S
 
 #### 2、组件使用
 
 > 从 bundle 中引入已打包的文件
 
 ```typescript
-import { AppRenderer } from '@alipay/alex/bundle';
-import '@alipay/alex/bundle/alex.css';
+import { AppRenderer } from '@codeblitzjs/ide-core/bundle';
+import '@codeblitzjs/ide-core/bundle/codeblitz.css';
 
 const App: React.FC = () => (
   <AppRenderer
@@ -43,77 +43,69 @@ ReactDOM.render(<App />, document.getElementById('main'));
 
 ```typescript
 // 全部引入
-import '@alipay/alex/languages';
+import '@codeblitzjs/ide-core/languages';
 
 // 或者按以下部分按需引入
 // 内置语言包会不断升级增加支持的语言
-// 可查看最新包中的文件 https://g.alipay.com/browse/@alipay/alex@latest/languages/index.js
-import '@alipay/alex/languages/acss';
-import '@alipay/alex/languages/bat';
-import '@alipay/alex/languages/clojure';
-import '@alipay/alex/languages/coffeescript';
-import '@alipay/alex/languages/cpp';
-import '@alipay/alex/languages/csharp';
-import '@alipay/alex/languages/css';
-import '@alipay/alex/languages/docker';
-import '@alipay/alex/languages/fsharp';
-import '@alipay/alex/languages/go';
-import '@alipay/alex/languages/groovy';
-import '@alipay/alex/languages/handlebars';
-import '@alipay/alex/languages/hlsl';
-import '@alipay/alex/languages/html';
-import '@alipay/alex/languages/ini';
-import '@alipay/alex/languages/java';
-import '@alipay/alex/languages/javascript';
-import '@alipay/alex/languages/json';
-import '@alipay/alex/languages/Kotlin';
-import '@alipay/alex/languages/less';
-import '@alipay/alex/languages/log';
-import '@alipay/alex/languages/lua';
-import '@alipay/alex/languages/make';
-import '@alipay/alex/languages/markdown';
-import '@alipay/alex/languages/objective-c';
-import '@alipay/alex/languages/perl';
-import '@alipay/alex/languages/php';
-import '@alipay/alex/languages/powershell';
-import '@alipay/alex/languages/pug';
-import '@alipay/alex/languages/python';
-import '@alipay/alex/languages/razor';
-import '@alipay/alex/languages/ruby';
-import '@alipay/alex/languages/rust';
-import '@alipay/alex/languages/scss';
-import '@alipay/alex/languages/shaderlab';
-import '@alipay/alex/languages/shellscript';
-import '@alipay/alex/languages/sql';
-import '@alipay/alex/languages/swift';
-import '@alipay/alex/languages/typescript';
-import '@alipay/alex/languages/vb';
-import '@alipay/alex/languages/velocity';
-import '@alipay/alex/languages/vscode-proto3';
-import '@alipay/alex/languages/vue';
-import '@alipay/alex/languages/xml';
-import '@alipay/alex/languages/yaml';
+// 可查看最新包中的文件 https://www.npmjs.com/package/@codeblitzjs/ide-core?activeTab=code
+import '@codeblitzjs/ide-core/languages/acss';
+import '@codeblitzjs/ide-core/languages/bat';
+import '@codeblitzjs/ide-core/languages/clojure';
+import '@codeblitzjs/ide-core/languages/coffeescript';
+import '@codeblitzjs/ide-core/languages/cpp';
+import '@codeblitzjs/ide-core/languages/csharp';
+import '@codeblitzjs/ide-core/languages/css';
+import '@codeblitzjs/ide-core/languages/docker';
+import '@codeblitzjs/ide-core/languages/fsharp';
+import '@codeblitzjs/ide-core/languages/go';
+import '@codeblitzjs/ide-core/languages/groovy';
+import '@codeblitzjs/ide-core/languages/handlebars';
+import '@codeblitzjs/ide-core/languages/hlsl';
+import '@codeblitzjs/ide-core/languages/html';
+import '@codeblitzjs/ide-core/languages/ini';
+import '@codeblitzjs/ide-core/languages/java';
+import '@codeblitzjs/ide-core/languages/javascript';
+import '@codeblitzjs/ide-core/languages/json';
+import '@codeblitzjs/ide-core/languages/Kotlin';
+import '@codeblitzjs/ide-core/languages/less';
+import '@codeblitzjs/ide-core/languages/log';
+import '@codeblitzjs/ide-core/languages/lua';
+import '@codeblitzjs/ide-core/languages/make';
+import '@codeblitzjs/ide-core/languages/markdown';
+import '@codeblitzjs/ide-core/languages/objective-c';
+import '@codeblitzjs/ide-core/languages/perl';
+import '@codeblitzjs/ide-core/languages/php';
+import '@codeblitzjs/ide-core/languages/powershell';
+import '@codeblitzjs/ide-core/languages/pug';
+import '@codeblitzjs/ide-core/languages/python';
+import '@codeblitzjs/ide-core/languages/razor';
+import '@codeblitzjs/ide-core/languages/ruby';
+import '@codeblitzjs/ide-core/languages/rust';
+import '@codeblitzjs/ide-core/languages/scss';
+import '@codeblitzjs/ide-core/languages/shaderlab';
+import '@codeblitzjs/ide-core/languages/shellscript';
+import '@codeblitzjs/ide-core/languages/sql';
+import '@codeblitzjs/ide-core/languages/swift';
+import '@codeblitzjs/ide-core/languages/typescript';
+import '@codeblitzjs/ide-core/languages/vb';
+import '@codeblitzjs/ide-core/languages/velocity';
+import '@codeblitzjs/ide-core/languages/vscode-proto3';
+import '@codeblitzjs/ide-core/languages/vue';
+import '@codeblitzjs/ide-core/languages/xml';
+import '@codeblitzjs/ide-core/languages/yaml';
 ```
 
 #### 4、按需引入语言功能
 
 > **语言使用 worker 插件提供 LSP 服务，具备智能提示、定义跳转等和 node LSP 等同的能力**
 
-**1) 安装扩展**<br />**使用 npx alex ext i <publisher>.<name> 安装扩展**
-
-```shell
-npx alex ext i alex.css-language-features-worker alex.html-language-features-worker alex.json-language-features-worker alex.typescript-language-features-worker
-```
-
-可根据需要安装 html, css, typescript, json<br />安装完成后会将配置自动写入 package.json 中的 cloudideExtensions
-
-**2）引入扩展**
+**1）引入扩展**
 
 ```typescript
-import html from '@alipay/alex/extensions/alex.html-language-features-worker';
-import css from '@alipay/alex/extensions/alex.css-language-features-worker';
-import typescript from '@alipay/alex/extensions/alex.typescript-language-features-worker';
-import json from '@alipay/alex/extensions/alex.json-language-features-worker';
+import html from '@codeblitzjs/ide-core/extensions/codeblitz.html-language-features-worker';
+import css from '@codeblitzjs/ide-core/extensions/codeblitz.css-language-features-worker';
+import typescript from '@codeblitzjs/ide-core/extensions/codeblitz.typescript-language-features-worker';
+import json from '@codeblitzjs/ide-core/extensions/codeblitz.json-language-features-worker';
 ```
 
 配置中引入
@@ -125,8 +117,6 @@ import json from '@alipay/alex/extensions/alex.json-language-features-worker';
   }}
 />
 ```
-
-**更多关于扩展开发的内容请参考**[**文档**](https://yuque.antfin-inc.com/cloud-ide/alex/xx5pq7)
 
 #### 5、自定义布局组件
 
@@ -140,7 +130,7 @@ import {
   SlotRenderer,
   SplitPanel,
   BoxPanel,
-} from '@alipay/alex/bundle';
+} from '@codeblitzjs/ide-core/bundle';
 
 // 界面布局组件，可根据需要调整
 // BoxPanel 定义了 flex 布局
@@ -175,7 +165,7 @@ const LayoutComponent = () => (
 #### 6、更改布局模块配置
 
 ```jsx
-import { AppRenderer, SlotLocation } from '@alipay/alex/bundle';
+import { AppRenderer, SlotLocation } from '@codeblitzjs/ide-core/bundle';
 
 const layoutConfig = {
   [SlotLocation.left]: {
@@ -200,7 +190,7 @@ const layoutConfig = {
 
 ## 三、类型说明
 
-alex 组件支持很多配置，详细 TS 类型及说明如下
+codeblitz 组件支持很多配置，详细 TS 类型及说明如下
 
 ```typescript
 interface IAppRendererProps extends IConfig {
@@ -229,7 +219,7 @@ export type IAppConfig = Partial<IAppOpts> & {
   workspaceDir: string;
 } & {
   /**
-   * 插件配置，参考插件开发文档 https://yuque.antfin-inc.com/cloud-ide/alex/wfy3gg
+   * 插件配置
    */
   plugins?: IPluginConfig;
 };
@@ -510,33 +500,33 @@ import ReactDOM from 'react-dom';
 import Button from 'antd/lib/button';
 import 'antd/lib/button/style/index.css';
 
-// alex
+// codeblitz
 import {
   AppRenderer,
   SlotLocation,
   SlotRenderer,
   SplitPanel,
   BoxPanel,
-} from '@alipay/alex/bundle';
-import '@alipay/alex/bundle/alex.css';
-// alex
+} from '@codeblitzjs/ide-core/bundle';
+import '@codeblitzjs/ide-core/bundle/alex.css';
+// codeblitz
 
 // 语法高亮
-import '@alipay/alex/languages/html';
-import '@alipay/alex/languages/handlebars';
-import '@alipay/alex/languages/css';
-import '@alipay/alex/languages/scss';
-import '@alipay/alex/languages/less';
-import '@alipay/alex/languages/javascript';
-import '@alipay/alex/languages/typescript';
-import '@alipay/alex/languages/json';
+import '@codeblitzjs/ide-core/languages/html';
+import '@codeblitzjs/ide-core/languages/handlebars';
+import '@codeblitzjs/ide-core/languages/css';
+import '@codeblitzjs/ide-core/languages/scss';
+import '@codeblitzjs/ide-core/languages/less';
+import '@codeblitzjs/ide-core/languages/javascript';
+import '@codeblitzjs/ide-core/languages/typescript';
+import '@codeblitzjs/ide-core/languages/json';
 // end
 
 // 语言功能
-import html from '@alipay/alex/extensions/alex.html-language-features-worker';
-import css from '@alipay/alex/extensions/alex.css-language-features-worker';
-import typescript from '@alipay/alex/extensions/alex.typescript-language-features-worker';
-import json from '@alipay/alex/extensions/alex.json-language-features-worker';
+import html from '@codeblitzjs/ide-core/extensions/codeblitz.html-language-features-worker';
+import css from '@codeblitzjs/ide-core/extensions/codeblitz.css-language-features-worker';
+import typescript from '@codeblitzjs/ide-core/extensions/codeblitz.typescript-language-features-worker';
+import json from '@codeblitzjs/ide-core/extensions/codeblitz.json-language-features-worker';
 
 // 布局配置，可根据需要增删模块
 export const layoutConfig = {
