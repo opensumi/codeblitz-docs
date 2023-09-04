@@ -29,16 +29,6 @@ module.exports = {
         },
       },
     ],
-    docs: [
-      // {
-      //   slug: 'develop/sample',
-      //   title: {
-      //     zh: '开发案例',
-      //     en: 'Develop Sample',
-      //   },
-      //   order: 4,
-      // },
-    ],
     showDingTalkQRCode: true,
     showWeChatQRCode: false,
     weChatQRCode: '',

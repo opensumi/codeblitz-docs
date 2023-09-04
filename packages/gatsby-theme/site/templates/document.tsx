@@ -228,9 +228,19 @@ export default function Template({
   };
 }): React.ReactNode {
   const [prev, next] = usePrevAndNext();
-  const { markdownRemark, allMarkdownRemark, site } = data; // data.markdownRemark holds our post data
+  const { allMarkdownRemark, site } = data;
+
+  let markdownRemark = data.markdownRemark;
+
   if (!markdownRemark) {
-    return null;
+    const find = data.allMarkdownRemark.edges.find((e: any) =>
+      location.pathname.includes(e.node.fields.slug),
+    );
+    if (find && find.node) {
+      markdownRemark = find.node;
+    } else {
+      return null;
+    }
   }
   const {
     frontmatter,
@@ -486,7 +496,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query {
+  query ($path: String!) {
     site {
       siteMetadata {
         title
@@ -503,7 +513,7 @@ export const pageQuery = graphql`
       }
       pathPrefix
     }
-    markdownRemark {
+    markdownRemark(fields: { slug: { eq: $path } }) {
       htmlAst
       tableOfContents
       fields {
@@ -520,17 +530,23 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fields: { slug: { regex: "//docs//" } } }
-      sort: { order: ASC, fields: [frontmatter___order] }
       limit: 1000
     ) {
       edges {
         node {
+          htmlAst
+          tableOfContents
           fields {
             slug
           }
           frontmatter {
             title
             order
+          }
+          parent {
+            ... on File {
+              relativePath
+            }
           }
         }
       }

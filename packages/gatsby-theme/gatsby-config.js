@@ -36,7 +36,7 @@ module.exports = ({
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `docs`,
-          path: path.resolve('./docs'),
+          path: path.join(__dirname, '../site/docs'),
           ignore: [`**/.*`],
         },
       },
@@ -44,15 +44,7 @@ module.exports = ({
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `images`,
-          path: path.resolve('./site/images'),
-          ignore: [`**/.*`],
-        },
-      },
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `examples`,
-          path: path.resolve('./examples'),
+          path: path.join(__dirname, '../site/images'),
           ignore: [`**/.*`],
         },
       },

@@ -1,8 +1,8 @@
 ---
-id: file-system.zh
+id: file-system
 title: 文件系统
-slug: file-system.zh
-order: 0
+slug: file-system
+order: 1
 ---
 
 对于文件树需要进行目录即文件夹读取，在 web 上因没有操作系统，因此文件系统也有别于标准 IDE 下的文件系统
