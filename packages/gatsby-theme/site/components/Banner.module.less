@@ -253,12 +253,15 @@
 
 @media (max-width: 1144px) {
   .wrapper {
+    height: calc(980px);
+    // max-height: calc(980px);
     .teaser {
       transition: 0.3s all;
       margin: auto;
       margin-top: 0;
-      top: 0;
+      top: 140px;
       bottom: 0;
+      right: 0;
     }
   }
 }
@@ -326,7 +329,7 @@
       justify-content: center;
       padding-bottom: 105px;
       .teaserimg {
-        width: 40%;
+        width: 80%;
         margin-left: unset;
         margin-right: unset;
       }
@@ -358,6 +361,7 @@
     }
     .teaser {
       width: 100%;
+      top: 210px;
       .teaserimg {
         width: 100%;
       }
@@ -375,7 +379,7 @@
         bottom: 10px;
         margin-top: unset;
         z-index: 1;
-        position: absolute;
+        // position: absolute;
         left: 0;
         width: 100%;
         justify-content: center;
