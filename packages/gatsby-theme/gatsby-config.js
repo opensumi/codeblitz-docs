@@ -130,7 +130,7 @@ module.exports = ({
           background_color: theme['primary-color'],
           theme_color: theme['primary-color'],
           display: `minimal-ui`,
-          icon: require.resolve(`./site/images/favicon.png`), // This path is relative to the root of the site.
+          icon: require.resolve(`./site/images/favicon.jpg`), // This path is relative to the root of the site.
         },
       },
       `gatsby-plugin-typescript`,
