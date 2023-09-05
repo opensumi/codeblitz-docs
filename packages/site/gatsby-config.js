@@ -33,7 +33,7 @@ module.exports = {
     showWeChatQRCode: false,
     weChatQRCode: '',
     dingTalkQRCode:
-      'https://img.alicdn.com/imgextra/i2/O1CN01Fcw6RC1T8qozkQBFG_!!6000000002338-2-tps-200-239.png',
+      'https://mdn.alipayobjects.com/huamei_htww6h/afts/img/A*E4p0TJ4l77kAAAAAAAAAAAAADhl8AQ/original',
     redirects: [],
     showGithubCorner: true, // 是否展示角落的 GitHub 图标
     showGithubStars: true,

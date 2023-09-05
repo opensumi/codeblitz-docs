@@ -7,7 +7,7 @@ import omit from 'omit.js';
 import { LayoutContext } from '../layouts/layout-context';
 import * as styles from './Footer.module.less';
 import 'rc-footer/assets/index.less';
-import { DingtalkOutlined } from '@ant-design/icons';
+import { DingtalkOutlined, GithubOutlined } from '@ant-design/icons';
 
 interface FooterProps extends RcFooterProps {
   rootDomain?: string;
@@ -72,14 +72,14 @@ const Footer: React.FC<FooterProps> = ({
       title: t('核心能力'),
       items: [
         {
-          title: t('平台介绍'),
-          url: 'https://codeblitz.cloud.alipay.com',
-          openExternal: true,
+          title: t('能力介绍'),
+          url: '#feature',
+          openExternal: false,
         },
         {
-          title: t('名次解释'),
-          url: 'https://codeblitz.cloud.alipay.com',
-          openExternal: true,
+          title: t('合作案例'),
+          url: '#companies',
+          openExternal: false,
         },
       ],
     };
@@ -89,23 +89,19 @@ const Footer: React.FC<FooterProps> = ({
       items: [
         {
           title: t('立即使用'),
-          url: 'https://codeblitz.cloud.alipay.com',
-          openExternal: true,
+          url: '#experience',
+          openExternal: false,
         },
       ],
     };
 
     const col3 = {
-      title: t('合作案例'),
+      title: t('帮助'),
       items: [
         {
-          title: '商家平台',
-          url: 'https://codeblitz.cloud.alipay.com',
-          openExternal: true,
-        },
-        {
-          title: '服务商平台',
-          url: 'https://codeblitz.cloud.alipay.com',
+          icon: <GithubOutlined />,
+          title: 'Github Issues',
+          url: 'https://github.com/opensumi/codeblitz/issues',
           openExternal: true,
         },
       ],
@@ -116,8 +112,8 @@ const Footer: React.FC<FooterProps> = ({
       items: [
         {
           icon: <DingtalkOutlined />,
-          title: t('钉钉'),
-          openExternal: true,
+          title: t('钉钉群: 38570006648'),
+          openExternal: false,
         },
       ],
     };

@@ -13,7 +13,9 @@ order: 0
 
 #### 1、安装 IDE 组件
 
+```
 yarn i @codeblitzjs/ide-core -S
+```
 
 #### 2、组件使用
 
@@ -27,9 +29,6 @@ const App: React.FC = () => (
   <AppRenderer
     appConfig={{
       workspaceDir: 'playground',
-    }}
-    runtimeConfig={{
-      biz: 'my-biz-key',
     }}
   />
 );
@@ -228,11 +227,6 @@ export type IAppConfig = Partial<IAppOpts> & {
  * 运行时相关配置
  */
 export interface RuntimeConfig {
-  /*
-   * 业务标识，用于内部埋点
-   */
-  biz: string;
-
   /**
    * 场景标识，目前用于 indexedDB store name 标识，暂不强制
    * 不填表示为默认场景，此时同一域名会共享 indexedDB
@@ -412,7 +406,7 @@ export interface RuntimeConfig {
 
 #### defaultPreferences
 
-该值为默认的偏好设置，和 Ant Codespaces 上空间的设置一致，因为想了解可以设置哪些值，可在 Ant Codespaces 进行设置，然后查看 .cloudide/settings.json 内容<br />常用设置
+<br />常用设置
 
 - `general.theme` {string} 主题色
 

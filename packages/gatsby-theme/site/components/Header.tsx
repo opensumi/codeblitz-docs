@@ -106,9 +106,8 @@ const Header: React.FC<HeaderProps> = ({
   onLanguageChange,
   // 默认就使用 OpenSumi 的公众号
   showDingTalkQRCode = true,
-  dingTalkQRCode = 'https://img.alicdn.com/imgextra/i1/O1CN01k3gCmL1HWPjLchVv7_!!6000000000765-0-tps-200-199.jpg',
-  showWeChatQRCode = true,
-  weChatQRCode = 'https://img.alicdn.com/imgextra/i4/O1CN01mAEZDH26YkE1hfUAi_!!6000000007674-2-tps-200-199.png',
+  dingTalkQRCode = 'https://mdn.alipayobjects.com/huamei_htww6h/afts/img/A*E4p0TJ4l77kAAAAAAAAAAAAADhl8AQ/original',
+  showWeChatQRCode = false,
   siteUrl,
   githubUrl = 'https://github.com/opensumi/core',
   defaultLanguage,
@@ -179,7 +178,7 @@ const Header: React.FC<HeaderProps> = ({
     >
       {navs && navs.length ? <NavMenuItems navs={navs} path={path} /> : null}
 
-      <li>
+      <li className={styles.divider_container}>
         <span className={styles.divider} />
       </li>
 

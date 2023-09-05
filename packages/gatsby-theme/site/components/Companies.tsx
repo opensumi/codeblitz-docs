@@ -42,7 +42,7 @@ const Companies: React.FC<CompaniesProps> = ({
   ));
 
   return (
-    <div className={classNames(styles.wrapper, className)}>
+    <div className={classNames(styles.wrapper, className)} id="companies">
       <div key="content" className={styles.content}>
         <p key="title" className={styles.title}>
           {title}
