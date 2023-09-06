@@ -14,7 +14,7 @@ order: 0
 #### 1、安装 IDE 组件
 
 ```
-yarn i @codeblitzjs/ide-core -S
+yarn add @codeblitzjs/ide-core
 ```
 
 #### 2、组件使用
