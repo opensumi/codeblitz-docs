@@ -67,6 +67,7 @@ interface FileSearchOptions extends SearchOptions {
 通过实现 provideResults 返回匹配的文件路径，默认会传入配置选项 includes 和 excludes，服务端可以处理该选项，如果服务端无法处理，可交给本地来处理
 
 示例：
+{% raw %}
 
 ```typescript
 <AppRenderer
@@ -93,6 +94,8 @@ interface SearchFile {
   (searchString: string, options: { limit?: number }): Promise<string[]>;
 }
 ```
+
+{% endraw %}
 
 ## 2、文本搜索
 
@@ -246,6 +249,7 @@ export type ProviderResult<T> =
 SearchMode 同文件搜索，因此对于远程搜索不支持的选项，可开启本地搜索过滤<br />不同于文件搜索，文本搜索支持的配置更多，可根据后面的示例及上面的类型注释来理解配置，同时因为文本搜索 <strong>不支持分页</strong> 如果需要返回更多的结果，需要由业务方自行查询更多数据，考虑到性能问题，搜索结果默认限制为 2000 条，同时支持 progress.report 来分步返回结果，这样每查询出一部分即可返回给前台显示
 
 示例如下
+{% raw %}
 
 ```typescript
 <AppRenderer
@@ -311,3 +315,5 @@ interface SearchContent {
   >;
 }
 ```
+
+{% endraw %}
