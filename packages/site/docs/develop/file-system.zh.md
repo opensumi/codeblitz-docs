@@ -29,6 +29,8 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 
 #### 1、IndexedDB
 
+{% raw %}
+
 ```jsx
 <AppRenderer
 	runtimeConfig={{
@@ -43,6 +45,8 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
   }}
 />
 ```
+
+{% endraw %}
 
 #### 2、InMemory
 
