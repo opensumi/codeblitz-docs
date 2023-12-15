@@ -29,8 +29,8 @@
     "pretty-quick": "^3.0.0"
   },
   "scripts": {
-    "start": "yarn workspace site develop",
-    "build": "yarn workspace site build",
+    "start": "cd packages/site && yarn run develop",
+    "build": "cd packages/site && yarn run build",
     "deploy": "yarn build && gh-pages -d site/public",
     "release": "yarn workspace @codeblitz/gatsby-theme run release",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,less}\"",

@@ -48,14 +48,14 @@ module.exports = ({
           ignore: [`**/.*`],
         },
       },
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `examples`,
-          path: path.resolve('./examples'),
-          ignore: [`**/.*`],
-        },
-      },
+      // {
+      //   resolve: `gatsby-source-filesystem`,
+      //   options: {
+      //     name: `examples`,
+      //     path: path.resolve('./examples'),
+      //     ignore: [`**/.*`],
+      //   },
+      // },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
