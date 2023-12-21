@@ -29,6 +29,8 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 
 #### 1、IndexedDB
 
+{% raw %}
+
 ```jsx
 <AppRenderer
 	runtimeConfig={{
@@ -44,7 +46,11 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 />
 ```
 
+{% endraw %}
+
 #### 2、InMemory
+
+{% raw %}
 
 ```jsx
 <AppRenderer
@@ -56,7 +62,11 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 />
 ```
 
+{% endraw %}
+
 #### 3、FileIndexSystem
+
+{% raw %}
 
 ```jsx
 <AppRenderer
@@ -81,7 +91,11 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 />
 ```
 
+{% endraw %}
+
 #### 4、DynamicRequest
+
+{% raw %}
 
 ```typescript
 type FileEntry = [string, BrowserFSFileType, any?];
@@ -126,9 +140,12 @@ const dirMap: Record<string, FileEntry[]> = {
 />;
 ```
 
+{% endraw %}
+
 #### 5、ZipFS
 
 zipData 为 zip 文件 Buffer
+{% raw %}
 
 ```jsx
 <AppRenderer
@@ -145,9 +162,12 @@ zipData 为 zip 文件 Buffer
 />
 ```
 
+{% endraw %}
+
 #### 6、FolderAdapter
 
 减少文件嵌套，如 zip 文件外层文件夹为 demo，实际 demo 无需展示，直接展示 demo 下的文件，可通过此方式将 demo 这层目录去除
+{% raw %}
 
 ```jsx
 <AppRenderer
@@ -170,9 +190,12 @@ zipData 为 zip 文件 Buffer
 />
 ```
 
+{% endraw %}
+
 #### 7、OverlayFS
 
 联合挂载，即在读系统上加一层写系统，读文件是优先从写系统上读取，如果没有再从读系统上读取，写文件时直接在写系统上写，这样对于只读系统可实现写操作，此种方式的好处是可将读写分离，分别实现，还可以结合 scm 做更多的控制
+{% raw %}
 
 ```jsx
 <AppRenderer
@@ -202,3 +225,5 @@ zipData 为 zip 文件 Buffer
   }}
 />
 ```
+
+{% endraw %}

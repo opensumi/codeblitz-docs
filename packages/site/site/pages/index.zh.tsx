@@ -94,7 +94,7 @@ const IndexPage: React.FC = () => {
 
   const openExperience = (value: string) => {
     console.log('openExperience:>> ', value);
-    window.open(`${window.location.origin}/console#${value}`);
+    window.open(`https://codeblitz.cloud.alipay.com/console#${value}`);
   };
 
   return (
