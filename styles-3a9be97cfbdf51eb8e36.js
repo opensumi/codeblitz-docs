@@ -22132,7 +22132,7 @@ const IndexPage = () => {
     coverImage: /*#__PURE__*/react.createElement(components_BannerSVG, null),
     logoUrl: logoUrl,
     title: t('什么是 Codeblitz'),
-    description: t('Codeblitze 是由蚂蚁云研发团队打造的基于 OpenSumi 的纯前端 IDE 基础框架，相比于我们传统的 Cloud IDE，最大的特点是无需容器，只需一个浏览器就能运行 Web IDE。在保证体验一致的基础之上具备启动快，定制灵活、接入方便等特点'),
+    description: t('Codeblitz 是由蚂蚁云研发团队打造的基于 OpenSumi 的纯前端 IDE 基础框架，相比于我们传统的 Cloud IDE，最大的特点是无需容器，只需一个浏览器就能运行 Web IDE。在保证体验一致的基础之上具备启动快，定制灵活、接入方便等特点'),
     className: "banner",
     buttons: bannerButtons
   }), /*#__PURE__*/react.createElement(components_Feature, {
