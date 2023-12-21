@@ -20,7 +20,7 @@ module.exports = ({
     siteMetadata: {
       title: `Codeblitz`,
       // description: `OpenSumi Doc Theme`,
-      siteUrl: 'https://codeblitz.cloud.alipay.com',
+      siteUrl: 'https://codeblitz.opensumi.com',
       githubUrl: 'https://github.com/opensumi/codeblitz',
       navs: [],
       docs: [],

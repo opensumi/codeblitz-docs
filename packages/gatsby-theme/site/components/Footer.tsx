@@ -62,7 +62,7 @@ const Footer: React.FC<FooterProps> = ({
             />
           ),
           title: ``,
-          url: 'https://codeblitz.cloud.alipay.com',
+          url: 'https://codeblitz.opensumi.com',
           openExternal: true,
         },
       ],

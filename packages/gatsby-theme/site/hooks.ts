@@ -48,10 +48,10 @@ export const useLogoLink = ({
   let defaultLogoLink;
   if (link) {
     defaultLogoLink = link;
-  } else if (siteUrl === 'https://codeblitz.cloud.alipay.com') {
+  } else if (siteUrl === 'https://codeblitz.opensumi.com') {
     defaultLogoLink = `/${lang}`;
   } else {
-    defaultLogoLink = `https://codeblitz.cloud.alipay.com/${lang}`;
+    defaultLogoLink = `https://codeblitz.opensumi.com/${lang}`;
   }
 
   return [defaultLogoLink];
