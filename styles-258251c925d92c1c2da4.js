@@ -22123,7 +22123,7 @@ const IndexPage = () => {
   }];
   const openExperience = value => {
     console.log('openExperience:>> ', value);
-    window.open(window.location.origin + "/console#" + value);
+    window.open("https://codeblitz.cloud.alipay.com/console#" + value);
   };
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Seo/* default */.Z, {
     title: t('Codeblitz'),
