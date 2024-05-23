@@ -5,7 +5,7 @@ slug: file-system
 order: 1
 ---
 
-对于文件树需要进行目录即文件夹读取，在 web 上因没有操作系统，因此文件系统也有别于标准 IDE 下的文件系统
+Codeblitz 需要读取和操作文件，因为浏览器层没有标准的文件读取 API，因此文件系统也有别于标准 IDE 下的文件系统。
 
 ### 一、通过插件实现
 
@@ -25,11 +25,12 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 - FolderAdapter 减少文件嵌套，一般配合其它文件系统一起使用
 - OverlayFS 读写分离，读写可用不同的文件系统
 
-在组件的 props 上 的 runtimeConfig.workspace 来配置，下面一一来举例，只展示 workspace 的配置
+在组件的 props 上 的 `runtimeConfig.workspace` 来配置文件系统，下面一一来举例，以下例子都可以在 <https://github.com/opensumi/codeblitz-sample/blob/main/filesystem.tsx> 中找到。
+
+所有的文件系统都会挂载到 `/workspace/{workspaceDir}` 这个路径下，`{workspaceDir}` 可以通过 `appConfig.workspaceDir` 来配置。
 
 #### 1、IndexedDB
 
-{% raw %}
 
 ```jsx
 <AppRenderer
@@ -46,11 +47,9 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 />
 ```
 
-{% endraw %}
 
 #### 2、InMemory
 
-{% raw %}
 
 ```jsx
 <AppRenderer
@@ -62,11 +61,9 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 />
 ```
 
-{% endraw %}
 
 #### 3、FileIndexSystem
 
-{% raw %}
 
 ```jsx
 <AppRenderer
@@ -91,11 +88,9 @@ codeblitz 内置了一套 BrowserFS，在开源库的基础上优化了些性能
 />
 ```
 
-{% endraw %}
 
 #### 4、DynamicRequest
 
-{% raw %}
 
 ```typescript
 type FileEntry = [string, BrowserFSFileType, any?];
@@ -140,12 +135,10 @@ const dirMap: Record<string, FileEntry[]> = {
 />;
 ```
 
-{% endraw %}
 
 #### 5、ZipFS
 
 zipData 为 zip 文件 Buffer
-{% raw %}
 
 ```jsx
 <AppRenderer
@@ -162,12 +155,10 @@ zipData 为 zip 文件 Buffer
 />
 ```
 
-{% endraw %}
 
 #### 6、FolderAdapter
 
 减少文件嵌套，如 zip 文件外层文件夹为 demo，实际 demo 无需展示，直接展示 demo 下的文件，可通过此方式将 demo 这层目录去除
-{% raw %}
 
 ```jsx
 <AppRenderer
@@ -190,12 +181,10 @@ zipData 为 zip 文件 Buffer
 />
 ```
 
-{% endraw %}
 
 #### 7、OverlayFS
 
 联合挂载，即在读系统上加一层写系统，读文件是优先从写系统上读取，如果没有再从读系统上读取，写文件时直接在写系统上写，这样对于只读系统可实现写操作，此种方式的好处是可将读写分离，分别实现，还可以结合 scm 做更多的控制
-{% raw %}
 
 ```jsx
 <AppRenderer
@@ -225,5 +214,17 @@ zipData 为 zip 文件 Buffer
   }}
 />
 ```
+#### 文件系统 API
 
-{% endraw %}
+加载好文件系统之后，你可以通过文件系统的 API 来操作文件:
+
+```ts
+import { requireModule } from '@codeblitzjs/ide-core';
+const fse = requireModule('fs-extra');
+
+function updateFile() {
+  const targetFile = path.join('/workspace', workspaceDir, 'readme.md');
+  const content = await fse.readFile(targetFile);
+  await fse.writeFile(targetFile, content.toString() +'\n\nThis is a demo file.', { encoding: 'utf8' });
+}
+```
