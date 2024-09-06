@@ -74,3 +74,5 @@ yarn-error.log
 dist
 package-lock.json
 .node/
+
+.yarn/install-state.gz

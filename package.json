@@ -1,5 +1,5 @@
 {
-  "name": "@codeblitz/gatsby-theme",
+  "name": "@codeblitz/codeblitz-docs",
   "private": true,
   "repository": {
     "type": "git",
@@ -46,5 +46,6 @@
   "resolutions": {
     "@babel/plugin-transform-spread": "7.12.1",
     "@babel/standalone": "7.12.6"
-  }
+  },
+  "packageManager": "yarn@4.4.1"
 }
