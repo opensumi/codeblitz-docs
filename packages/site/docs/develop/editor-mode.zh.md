@@ -24,9 +24,9 @@ order: 4
 
 ### 1）引入 JS 和 CSS
 
-```json
-import { IAppInstance, EditorRenderer, registerLanguage, registerGrammar } from '@codeblitzjs/ide-core/bundle/alex.editor';
-import '@codeblitzjs/ide-core/bundle/alex.editor.css';
+```ts
+import { IAppInstance, EditorRenderer, registerLanguage, registerGrammar } from '@codeblitzjs/ide-core/bundle/codeblitz.editor';
+import '@codeblitzjs/ide-core/bundle/codeblitz.editor.css';
 ```
 
 editor 提供单独的 js 和 css 文件，通过从 bundle 中引入打包好的 js 和 css，省去了集成项目配置 less 等源文件的处理
@@ -152,7 +152,7 @@ editor 下默认不引入扩展，这样可减少体积，如果有扩展的需�
 
 #### 更改引入方式
 
-- 如果引用的是 bundle 文件，那么将 `@codeblitzjs/ide-core/bundle/alex.editor` 的引用改为 `@codeblitzjs/ide-core/bundle/alex.editor.all` 即可
+- 如果引用的是 bundle 文件，那么将 `@codeblitzjs/ide-core/bundle/codeblitz.editor` 的引用改为 `@codeblitzjs/ide-core/bundle/codeblitz.editor.all` 即可
 - 如果引用的是 lib 下资源，那么除了引用 `@codeblitzjs/ide-core/lib/editor`，还需引入 extension 相关文件
 
 ```jsx

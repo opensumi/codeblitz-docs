@@ -504,7 +504,7 @@ import {
   SplitPanel,
   BoxPanel,
 } from '@codeblitzjs/ide-core/bundle';
-import '@codeblitzjs/ide-core/bundle/alex.css';
+import '@codeblitzjs/ide-core/bundle/codeblitz.css';
 // codeblitz
 
 // 语法高亮
