@@ -5987,6 +5987,50 @@ function classNames(classSet) {
 
 /***/ }),
 
+/***/ 6545:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var parse = __webpack_require__(1718);
+
+/**
+ * Parses inline style to object.
+ *
+ * @example
+ * // returns { 'line-height': '42' }
+ * StyleToObject('line-height: 42;');
+ *
+ * @param  {String}      style      - The inline style.
+ * @param  {Function}    [iterator] - The iterator function.
+ * @return {null|Object}
+ */
+function StyleToObject(style, iterator) {
+  var output = null;
+  if (!style || typeof style !== 'string') {
+    return output;
+  }
+  var declaration;
+  var declarations = parse(style);
+  var hasIterator = typeof iterator === 'function';
+  var property;
+  var value;
+  for (var i = 0, len = declarations.length; i < len; i++) {
+    declaration = declarations[i];
+    property = declaration.property;
+    value = declaration.value;
+    if (hasIterator) {
+      iterator(property, value, declaration);
+    } else if (value) {
+      output || (output = {});
+      output[property] = value;
+    }
+  }
+  return output;
+}
+module.exports = StyleToObject;
+module.exports["default"] = StyleToObject; // ESM support
+
+/***/ }),
+
 /***/ 4652:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
@@ -6119,50 +6163,6 @@ module.exports = function getSideChannel() {
   };
   return channel;
 };
-
-/***/ }),
-
-/***/ 8387:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var parse = __webpack_require__(1718);
-
-/**
- * Parses inline style to object.
- *
- * @example
- * // returns { 'line-height': '42' }
- * StyleToObject('line-height: 42;');
- *
- * @param  {String}      style      - The inline style.
- * @param  {Function}    [iterator] - The iterator function.
- * @return {null|Object}
- */
-function StyleToObject(style, iterator) {
-  var output = null;
-  if (!style || typeof style !== 'string') {
-    return output;
-  }
-  var declaration;
-  var declarations = parse(style);
-  var hasIterator = typeof iterator === 'function';
-  var property;
-  var value;
-  for (var i = 0, len = declarations.length; i < len; i++) {
-    declaration = declarations[i];
-    property = declaration.property;
-    value = declaration.value;
-    if (hasIterator) {
-      iterator(property, value, declaration);
-    } else if (value) {
-      output || (output = {});
-      output[property] = value;
-    }
-  }
-  return output;
-}
-module.exports = StyleToObject;
-module.exports["default"] = StyleToObject; // ESM support
 
 /***/ }),
 
@@ -11622,7 +11622,7 @@ Page.noLayout = true;
 
 /***/ }),
 
-/***/ 8060:
+/***/ 1870:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11635,7 +11635,7 @@ __webpack_require__.d(__webpack_exports__, {
   getGithubSourceUrl: function() { return /* binding */ getGithubSourceUrl; }
 });
 
-// NAMESPACE OBJECT: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/types.js
+// NAMESPACE OBJECT: ../../node_modules/rehype-react/node_modules/property-information/lib/util/types.js
 var types_namespaceObject = {};
 __webpack_require__.r(types_namespaceObject);
 __webpack_require__.d(types_namespaceObject, {
@@ -14483,7 +14483,7 @@ DrawerWrapper.defaultProps = {
 /* harmony default export */ var rc_drawer_es = (es_DrawerWrapper);
 // EXTERNAL MODULE: ../../node_modules/react-use/esm/useMedia.js
 var useMedia = __webpack_require__(1433);
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/schema.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/util/schema.js
 /**
  * @typedef {import('./info.js').Info} Info
  * @typedef {Record<string, Info>} Properties
@@ -14512,7 +14512,7 @@ Schema.prototype.property = {};
 Schema.prototype.normal = {};
 /** @type {string|null} */
 Schema.prototype.space = null;
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/merge.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/util/merge.js
 /**
  * @typedef {import('./schema.js').Properties} Properties
  * @typedef {import('./schema.js').Normal} Normal
@@ -14537,7 +14537,7 @@ function merge(definitions, space) {
   }
   return new Schema(property, normal, space);
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/normalize.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/normalize.js
 /**
  * @param {string} value
  * @returns {string}
@@ -14545,7 +14545,7 @@ function merge(definitions, space) {
 function normalize(value) {
   return value.toLowerCase();
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/info.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/util/info.js
 class Info {
   /**
    * @constructor
@@ -14571,7 +14571,7 @@ Info.prototype.spaceSeparated = false;
 Info.prototype.commaOrSpaceSeparated = false;
 Info.prototype.mustUseProperty = false;
 Info.prototype.defined = false;
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/types.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/util/types.js
 let powers = 0;
 const types_boolean = increment();
 const booleanish = increment();
@@ -14583,7 +14583,7 @@ const commaOrSpaceSeparated = increment();
 function increment() {
   return 2 ** ++powers;
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/defined-info.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/util/defined-info.js
 
 
 
@@ -14623,7 +14623,7 @@ function mark(values, key, value) {
     values[key] = value;
   }
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/create.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/util/create.js
 /**
  * @typedef {import('./schema.js').Properties} Properties
  * @typedef {import('./schema.js').Normal} Normal
@@ -14668,7 +14668,7 @@ function create(definition) {
   }
   return new Schema(property, normal, definition.space);
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/xlink.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/xlink.js
 
 const xlink = create({
   space: 'xlink',
@@ -14685,7 +14685,7 @@ const xlink = create({
     xLinkType: null
   }
 });
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/xml.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/xml.js
 
 const xml = create({
   space: 'xml',
@@ -14698,7 +14698,7 @@ const xml = create({
     xmlSpace: null
   }
 });
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/case-sensitive-transform.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/util/case-sensitive-transform.js
 /**
  * @param {Record<string, string>} attributes
  * @param {string} attribute
@@ -14707,7 +14707,7 @@ const xml = create({
 function caseSensitiveTransform(attributes, attribute) {
   return attribute in attributes ? attributes[attribute] : attribute;
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/util/case-insensitive-transform.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/util/case-insensitive-transform.js
 
 
 /**
@@ -14718,7 +14718,7 @@ function caseSensitiveTransform(attributes, attribute) {
 function caseInsensitiveTransform(attributes, property) {
   return caseSensitiveTransform(attributes, property.toLowerCase());
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/xmlns.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/xmlns.js
 
 
 const xmlns = create({
@@ -14732,7 +14732,7 @@ const xmlns = create({
     xmlnsXLink: null
   }
 });
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/aria.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/aria.js
 
 
 const aria = create({
@@ -14791,7 +14791,7 @@ const aria = create({
     role: null
   }
 });
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/html.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/html.js
 
 
 
@@ -15147,7 +15147,7 @@ const html = create({
     unselectable: null
   }
 });
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/svg.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/svg.js
 
 
 
@@ -15709,7 +15709,7 @@ const svg = create({
     zoomAndPan: null
   }
 });
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/index.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/index.js
 /**
  * @typedef {import('./lib/util/info.js').Info} Info
  * @typedef {import('./lib/util/schema.js').Schema} Schema
@@ -15727,7 +15727,7 @@ const svg = create({
 
 const property_information_html = merge([xml, xlink, xmlns, aria, html], 'html');
 const property_information_svg = merge([xml, xlink, xmlns, aria, svg], 'svg');
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/find.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/find.js
 /**
  * @typedef {import('./util/schema.js').Schema} Schema
  */
@@ -15788,7 +15788,7 @@ function kebab($0) {
 function camelcase($0) {
   return $0.charAt(1).toUpperCase();
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/property-information/lib/hast-to-react.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/property-information/lib/hast-to-react.js
 /**
  * `hast` is close to `React`, but differs in a couple of cases.
  *
@@ -15817,7 +15817,7 @@ const hastToReact = {
   xLinkType: 'xlinkType',
   xmlnsXLink: 'xmlnsXlink'
 };
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/space-separated-tokens/index.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/space-separated-tokens/index.js
 /**
  * Parse space-separated tokens to an array of strings.
  *
@@ -15842,7 +15842,7 @@ function parse(value) {
 function stringify(values) {
   return values.join(' ').trim();
 }
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/comma-separated-tokens/index.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/comma-separated-tokens/index.js
 /**
  * @typedef Options
  *   Configuration for `stringify`.
@@ -15905,13 +15905,13 @@ function comma_separated_tokens_stringify(values, options) {
   const input = values[values.length - 1] === '' ? [...values, ''] : values;
   return input.join((settings.padRight ? ' ' : '') + ',' + (settings.padLeft === false ? '' : ' ')).trim();
 }
-// EXTERNAL MODULE: ../../node_modules/style-to-object/index.js
-var style_to_object = __webpack_require__(8387);
+// EXTERNAL MODULE: ../../node_modules/rehype-react/node_modules/style-to-object/index.js
+var style_to_object = __webpack_require__(6545);
 var style_to_object_default = /*#__PURE__*/__webpack_require__.n(style_to_object);
-;// CONCATENATED MODULE: ../../node_modules/style-to-object/index.mjs
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/style-to-object/index.mjs
 
 /* harmony default export */ var node_modules_style_to_object = ((style_to_object_default()));
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/node_modules/web-namespaces/index.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/web-namespaces/index.js
 /**
  * Map of web namespaces.
  *
@@ -15925,7 +15925,7 @@ const webNamespaces = {
   xml: 'http://www.w3.org/XML/1998/namespace',
   xmlns: 'http://www.w3.org/2000/xmlns/'
 };
-;// CONCATENATED MODULE: ../../node_modules/hast-to-hyperscript/lib/index.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/hast-to-hyperscript/lib/index.js
 /**
  * @typedef {import('property-information').Schema} Schema
  * @typedef {import('hast').Content} Content
@@ -16266,7 +16266,7 @@ function parseStyle(value, tagName) {
 // EXTERNAL MODULE: ../../node_modules/@mapbox/hast-util-table-cell-style/index.js
 var hast_util_table_cell_style = __webpack_require__(9571);
 var hast_util_table_cell_style_default = /*#__PURE__*/__webpack_require__.n(hast_util_table_cell_style);
-;// CONCATENATED MODULE: ../../node_modules/hast-util-whitespace/index.js
+;// CONCATENATED MODULE: ../../node_modules/rehype-react/node_modules/hast-util-whitespace/index.js
 /**
  * Check if the given value is *inter-element whitespace*.
  *
