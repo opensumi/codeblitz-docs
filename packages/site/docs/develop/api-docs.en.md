@@ -488,8 +488,6 @@ IDE 上内置了很多的快捷键，如果不需要可以配置，因为平台�
 
 ## 五、完整示例参考
 
-{% raw %}
-
 ```typescript
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -626,5 +624,3 @@ const App: React.FC = () => {
 
 ReactDOM.render(<App />, document.getElementById('main'));
 ```
-
-{% endraw %}
